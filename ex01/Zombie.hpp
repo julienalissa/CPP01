@@ -1,4 +1,4 @@
-#ifndef ZOMBIE_HPP
+# ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
 # include <string>
@@ -10,7 +10,7 @@ public:
 	Zombie();
 	~Zombie();
 	void		announce(void);
-	void		setName(std::string name);
+	void		setName(std::string name, int i);
 	std::string	getName(void);
 private:
 	std::string	_name;

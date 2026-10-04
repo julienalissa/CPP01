@@ -8,7 +8,7 @@ void	setAllNames(Zombie* zombieHorde, std::string name, int n)
 
 	while (i < n)
 	{
-		zombieHorde[i].setName(name);
+		zombieHorde[i].setName(name, i);
 		i++;
 	}
 }

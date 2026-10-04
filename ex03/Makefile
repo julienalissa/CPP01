@@ -1,9 +1,9 @@
-NAME = MoarBrainz
+NAME = UnnecessaryViolence
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX = c++
 
-SRCS := main.cpp hordeOfZombies.cpp Zombie.cpp
+SRCS := main.cpp Weapon.cpp HumanA.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 
