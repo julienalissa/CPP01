@@ -15,10 +15,10 @@ void	Zombie::announce(void)
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void	Zombie::setName(std::string name, int i)
+void	Zombie::setName(std::string name)
 {
-	char c = i + '0';
-	this->_name = name + c;
+
+	this->_name = name;
 
 }
 

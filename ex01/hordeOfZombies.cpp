@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-void	setAllNames(Zombie* zombieHorde, std::string name, int n)
+static void	setAllNames(Zombie* zombieHorde, std::string name, int n)
 {
 	int	i;
 
@@ -8,7 +8,7 @@ void	setAllNames(Zombie* zombieHorde, std::string name, int n)
 
 	while (i < n)
 	{
-		zombieHorde[i].setName(name, i);
+		zombieHorde[i].setName(name);
 		i++;
 	}
 }
@@ -17,6 +17,11 @@ Zombie* zombieHorde(int n, std::string name)
 {
 	Zombie *zombieHorde;
 
+	if (n <= 0)
+	{
+		std::cout << "Invalid number of zombies" << std::endl;
+		return (NULL);
+	}
 	zombieHorde = new Zombie[n];
 	setAllNames(zombieHorde, name, n);
 
