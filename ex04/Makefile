@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX = c++
 
-SRCS := main.cpp
+SRCS := main.cpp Sed.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 

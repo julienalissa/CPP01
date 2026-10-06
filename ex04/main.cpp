@@ -1,15 +1,28 @@
-#include <iostream>
-#include <string>
+#include "Sed.hpp"
 
 int	main(int argc, char **argv)
 {
+	std::string	fileName;
+	std::string	s1;
+	std::string	s2;
+
 	if (argc != 4)
 	{
 		std::cout << "Execute like this : " << argv[0] << " <arg1> <arg2> <arg3>" << std::endl;
 		return (1);
 	}
-		std::cout << "top" << std::endl;
+	fileName = argv[1];
+	s1 = argv[2];
+	s2 = argv[3];
+	if (s1.empty())
+	{
+		std::cout << "S2 is empty !" << std::endl;
+	}
+	Sed sed (fileName, s1, s2);
 
-
+	if (sed.openFiles() == 1)
+		return (1);
+	sed.remplaceInFile();
+	sed.closeFiles();
 	return (0);
 }
