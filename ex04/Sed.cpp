@@ -44,19 +44,32 @@ void	Sed::closeFiles()
 {
 	if (this->_inputFile.is_open())
 		this->_inputFile.close();
-	std::cout << "input close" << std::endl;
 	if (this->_outFile.is_open())
 		this->_outFile.close();
-	std::cout << "output close" << std::endl;
 }
 
 void	Sed::remplaceInFile()
 {
 	std::string	line;
 	std::size_t	pos;
-	std::size_t	
+	std::size_t	foundPos;
+
+	if (this->_s1.empty())
+	{
+		std::cerr << "S1 string is empty!" << std::endl;
+		return ;
+	}
 	while (std::getline(this->_inputFile, line))
 	{
-
+		pos = 0;
+			while ((foundPos = line.find(this->_s1, pos)) != std::string::npos)
+			{
+				this->_outFile << line.substr(pos, foundPos - pos);
+				this->_outFile << this->_s2;
+				pos = foundPos + this->_s1.length();
+			}
+			this->_outFile << line.substr(pos, std::string::npos);
+		if (!this->_inputFile.eof())
+			this->_outFile << std::endl;
 	}
 }

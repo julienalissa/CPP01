@@ -14,10 +14,6 @@ int	main(int argc, char **argv)
 	fileName = argv[1];
 	s1 = argv[2];
 	s2 = argv[3];
-	if (s1.empty())
-	{
-		std::cout << "S2 is empty !" << std::endl;
-	}
 	Sed sed (fileName, s1, s2);
 
 	if (sed.openFiles() == 1)
